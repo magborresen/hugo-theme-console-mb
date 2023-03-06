@@ -53,4 +53,15 @@
         {{ partial "footer.html" . }}
     </div>
   </body>
+{{ if .Params.math}}{{ partial "math.html" . }}{{ end }}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
 </html>
